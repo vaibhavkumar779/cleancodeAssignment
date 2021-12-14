@@ -30,13 +30,15 @@ public class CodeChanged {
 
         for (TempNumber = 2; TempNumber < sizeArray; TempNumber++) {
 
-            if (array[i] > objCheck.LargestNumber) {
+            if (array[TempNumber] > objCheck.LargestNumber) {
                 objCheck.LargestNumber = array[TempNumber];
             }
             else if (array[TempNumber] < objCheck.SmallestNumber) {
                 objCheck.SmallestNumber = array[TempNumber];
             }
         }
+
+        return objCheck;
     }
 
     public static void main(String args[]){
@@ -47,14 +49,14 @@ public class CodeChanged {
         NumberToCheck objCheck = findLargestSmallest(givenArray,arraySize); // method calling
 
         // printing the given array
-        System.out.printf(" Given Array is:\n");
+        System.out.printf("Given Array is:\n");
         for (int tempNum = 0; tempNum < arraySize; tempNum++){
             System.out.printf(givenArray[tempNum] + " ");
         }
 
         // print the  Smallest and Largest Number
-        System.out.printf("\n The Samllest Number in the array is %d", objCheck.SmallestNumber);
-        System.out.printf("\n The Largest Number in the Array is %d", objCheck.LargestNumber);
+        System.out.printf("\nThe Samllest Number in the array is %d", objCheck.SmallestNumber);
+        System.out.printf("\nThe Largest Number in the Array is %d\n", objCheck.LargestNumber);
     }
 
 }
