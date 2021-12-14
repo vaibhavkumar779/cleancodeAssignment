@@ -1,11 +1,16 @@
 public class CodeChanged {
+
+    // static class to contain both values
     static class NumberToCheck{
         int SmallestNumber;
         int LargestNumber;
     }
 
+    // method to give the Largest and Smallest numbers in a given array
     static NumberToCheck findLargestSmallest (int[] array, int sizeArray){
+
         NumberToCheck objCheck = new NumberToCheck();
+
         int TempNumber;
 
         if (sizeArray == 1) {
@@ -24,9 +29,11 @@ public class CodeChanged {
         }
 
         for (TempNumber = 2; TempNumber < sizeArray; TempNumber++) {
+
             if (array[i] > objCheck.LargestNumber) {
                 objCheck.LargestNumber = array[TempNumber];
-            } else if (array[TempNumber] < objCheck.SmallestNumber) {
+            }
+            else if (array[TempNumber] < objCheck.SmallestNumber) {
                 objCheck.SmallestNumber = array[TempNumber];
             }
         }
@@ -37,10 +44,17 @@ public class CodeChanged {
         int givenArray[] = {1000, 11, 445, 1, 330, 3000};
         int arraySize = 6;
 
-        NumberToCheck objCheck = findLargestSmallest(givenArray,arraySize);
+        NumberToCheck objCheck = findLargestSmallest(givenArray,arraySize); // method calling
 
-        System.out.printf("\na is %d", objCheck.SmallestNumber);
-        System.out.printf("\nb is %d", objCheck.LargestNumber);
+        // printing the given array
+        System.out.printf(" Given Array is:\n");
+        for (int tempNum = 0; tempNum < arraySize; tempNum++){
+            System.out.printf(givenArray[tempNum] + " ");
+        }
+
+        // print the  Smallest and Largest Number
+        System.out.printf("\n The Samllest Number in the array is %d", objCheck.SmallestNumber);
+        System.out.printf("\n The Largest Number in the Array is %d", objCheck.LargestNumber);
     }
 
 }
